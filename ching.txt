@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 hello for ching!
+=======
+Hello! This New Message.
+>>>>>>> feature/sotra_task
