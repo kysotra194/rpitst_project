@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        /* CSS Reset & General Settings */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Container Card */
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container h2 {
+            color: #333333;
+            margin-bottom: 24px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        /* Form Groups & Inputs */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555555;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="password"]:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        /* Form Options (Checkbox & Forgot Password) */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666666;
+            margin-bottom: 24px;
+        }
+
+        .form-options label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .form-options a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5a67d8;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.99);
+        }
+
+        /* Sign-up Link Footer */
+        .login-container > p {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666666;
+        }
+
+        .login-container > p a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-container > p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Sign In to Your Account</h2>
+        
+        <form action="/login-process-endpoint" method="POST">
+            
+            <div class="form-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-options">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="/forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    </div>
+
+</body>
+</html>
